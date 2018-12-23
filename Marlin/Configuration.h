@@ -893,7 +893,7 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 5)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 6)
 
 // The number of probes to perform at each point.
 //   Set to 2 for a fast/slow probe, using the second probe result.
@@ -1005,20 +1005,16 @@
 // @section machine
 
 // The size of the print bed
-#define BED_X_MAX 230
-#define BED_Y_MAX 238
+#define X_BED_SIZE 225
+#define Y_BED_SIZE 225
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 3
-#define Y_MIN_POS 6
+#define X_MIN_POS 0
+#define Y_MIN_POS -6
 #define Z_MIN_POS 0
-#define X_MAX_POS BED_X_MAX
-#define Y_MAX_POS BED_Y_MAX
+#define X_MAX_POS 245
+#define Y_MAX_POS 237
 #define Z_MAX_POS 250
-
-// The size of the print bed
-#define X_BED_SIZE X_MAX_POS-X_MIN_POS
-#define Y_BED_SIZE Y_MAX_POS-Y_MIN_POS
 
 /**
  * Software Endstops
