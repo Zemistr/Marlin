@@ -21,11 +21,11 @@
  */
 
 #ifndef TARGET_LPC1768
-  #error "Oops!  Make sure you have the LPC1768 environment selected in your IDE."
+#error "Oops!  Make sure you have the LPC1768 environment selected in your IDE."
 #endif
 
 #ifndef BOARD_NAME
-  #define BOARD_NAME "BIQU SKR V1.1"
+#define BOARD_NAME "BIQU SKR V1.1"
 #endif
 
 //
@@ -74,9 +74,9 @@
 //
 #define HEATER_0_PIN       P2_07
 #if HOTENDS == 1
-  #define FAN1_PIN         P2_04
+#define FAN1_PIN         P2_04
 #else
-  #define HEATER_1_PIN     P2_04
+#define HEATER_1_PIN     P2_04
 #endif
 #define FAN_PIN            P2_03
 #define HEATER_BED_PIN     P2_05
@@ -95,7 +95,7 @@
  */
 
 #if ENABLED(ULTRA_LCD)
-  #define BEEPER_PIN       P1_30
+#define BEEPER_PIN       P1_30
   #define BTN_EN1          P3_26
   #define BTN_EN2          P3_25
   #define BTN_ENC          P2_11
@@ -119,7 +119,7 @@
 // requires jumpers on the SKR V1.1 board as documented here:
 // https://www.facebook.com/groups/505736576548648/permalink/630639874058317/
 #if !ANY(LPC_SD_LCD, LPC_SD_ONBOARD, LPC_SD_CUSTOM_CABLE)
-  #if ENABLED(MKS_MINI_12864)
+#if ENABLED(MKS_MINI_12864)
     #define LPC_SD_LCD
     #undef USB_SD_DISABLED
     #define USB_SD_ONBOARD
@@ -131,7 +131,7 @@
 
 #if ENABLED(LPC_SD_LCD)
 
-  #define SCK_PIN          P0_15
+#define SCK_PIN          P0_15
   #define MISO_PIN         P0_17
   #define MOSI_PIN         P0_18
   #define SS_PIN           P1_23   // Chip select for SD card used by Marlin
@@ -139,7 +139,7 @@
 
 #elif ENABLED(LPC_SD_ONBOARD)
 
-  #if ENABLED(USB_SD_ONBOARD)
+#if ENABLED(USB_SD_ONBOARD)
     // When sharing the SD card with a PC we want the menu options to
     // mount/unmount the card and refresh it. So we disable card detect.
     #define SHARED_SD_CARD
@@ -156,7 +156,7 @@
 // Trinamic driver support
 
 #if HAS_TRINAMIC
-  // Using TMC devices in intelligent mode requires extra connections to each device. Unfortunately
+// Using TMC devices in intelligent mode requires extra connections to each device. Unfortunately
   // the SKR does not have many free pins (especially if a display is in use). The SPI-based devices
   // will require 3 connections (clock, mosi, miso), plus a chip select line (CS) for each driver.
   // The UART-based devices require 2 pis per deriver (one of which must be interrupt capable).
